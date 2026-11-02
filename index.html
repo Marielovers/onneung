@@ -15,27 +15,27 @@
 </style>
 </head>
 <body>
-<div class="page"><div class="brandline"><div class="brand"><span class="mark">O</span> OLAT <span style="color:#c6c0b6">/</span> 온리리온 능력 평가 시험</div><div class="brandsub">ONLYLION APTITUDE TEST<br>2026 · VER 0.2</div></div><main id="app" aria-live="polite"></main><div class="foot">본 시험의 문항·정답은 출제자가 제공한 설정을 기준으로 합니다. · 비공식 팬게임</div></div>
+<div class="page"><div class="brandline"><div class="brand"><span class="mark">O</span> OLAT <span style="color:#c6c0b6">/</span> 온리리온 능력 평가 시험</div><div class="brandsub">ONLYLION APTITUDE TEST<br>2026 · VER 0.4</div></div><main id="app" aria-live="polite"></main><div class="foot">본 시험의 문항·정답은 출제자가 제공한 설정을 기준으로 합니다. · 비공식 팬게임</div></div>
 <script>
 'use strict';
 /* 답안 배열의 번호는 0부터 시작합니다. 정답이나 문제 수정은 아래에서 가능합니다. */
 const QUESTIONS = [
-  { text:'온리리온의 방송 시작 시간은?', options:['18시','19시','20시','몰?루'], correct:[3]},
-  { text:'온리리온의 첫 라이브 방송 날짜는?', options:['12월 24일','12월 25일','12월 26일','12월 27일'], correct:[2]},
-  { text:'온리리온2호점에서 조회수가 가장 높은 영상은 [어느덧 당신이 온 지]이다.', options:['O','X'], correct:[1]},
-  { text:'온리리온이 발표한 볼팝의 갯수는?', options:['40s','50s','60s','70s'], correct:[1]},
-  { text:'온리리온은', options:['귀엽다','짱귀엽다','너무 귀엽다','미친듯이 귀엽다'], correct:[0,1,2,3]},
-  { text:'온리리온의 거주 지역은?', options:['엘리아스','천국','마계','인천'], correct:[2,3]},
-  { text:'온리리온의 버추얼 아바타 이름은?', options:['리포','라포','대포','빅암스트롱포'], correct:[0]},
-  { text:'온리리온의 나이는?', options:['1','13','17','19'], correct:[2], note:'온리리온은 17세 여고생이다.'},
+  { text:'온리리온의 방송 시작 시간은?', options:['18시','19시','20시','몰?루'], correct:[3], note:'본인은 19시라고 주장하나 그 누구도 예측할 수 없다. 심지어 본인도...' },
+  { text:'온리리온의 첫 라이브 방송 날짜는?', options:['12월 24일','12월 25일','12월 26일','12월 27일'], correct:[2], note:'크리스마스 다음날로 외우자' },
+  { text:'온리리온2호점에서 조회수가 가장 높은 영상은 [어느덧 당신이 온 지]이다.', options:['O','X'], correct:[1], note:'밈으로 배우는 트릭컬의 모든 것이 1위이다' },
+  { text:'온리리온이 발표한 볼팝의 갯수는?', options:['40s','50s','60s','70s'], correct:[1], note:'정확히 51개이다' },
+  { text:'온리리온은', options:['귀엽다','짱귀엽다','너무 귀엽다','미친듯이 귀엽다'], correct:[0,1,2,3], note:'귀여웡!' },
+  { text:'온리리온의 거주 지역은?', options:['엘리아스','천국','마계','인천'], correct:[2,3], note:'찾아가지 말도록 하자' },
+  { text:'온리리온의 버추얼 아바타 이름은?', options:['리포','라포','대포','빅암스트롱포'], correct:[0], note:'이걸 모르는자, 당장 온리리온 라이브로' },
+  { text:'온리리온의 나이는?', options:['1','13','17','19'], correct:[2], note:'온리리온이 17세 여고생이란 건 전세계가 아는 사실이다' },
   { text:'온리리온이 가장 많이 사용한 아바타의 이름은?', options:['SD리포','리온','맨다몬','온순이'], correct:[0]},
-  { text:'온리리온의 남표니 이름은?', options:['시온 더 다크불릿','시온덜크','B급 뮤직','편순이'], correct:[1]},
+  { text:'온리리온의 남표니 이름은?', options:['시온 더 다크불릿','시온덜크','B급 뮤직','편순이'], correct:[1], note:'둘이 일본여행가서 한 이불을 덮고 잤다고 한다' },
   { text:'온리리온의 이메일은?', options:[], correct:[0], gimmick:'email'},
-  { text:'온리리온이 사용하는 아바타의 리포의 어원은? (2개 선택)', options:['리온','소피 노이엔뮐러','루포','마리'], correct:[0,2], multi:true},
+  { text:'온리리온이 사용하는 아바타의 어원은?', options:['리온','소피 노이엔뮐러','루포','마리'], correct:[0,2], multi:true, note:'(리)온 + (루)포' },
   { text:'온리리온의 남표니가 사용하는 캐릭터, 맨다몬의 어원은 어디서 왔는가?', options:['음식','동물','꽃','트릭컬'], correct:[0], note:'맨다몬의 어원은 만두와 즌다몬이다.'},
   { text:'온리리온이 과거 좋아했던 캐릭터의 이름은?', options:['소피 농이왼물려','라이잘린 스타우트','리온하르트','소피 노이엔뮐러'], correct:[3], image:true},
   { text:'다음 중 온리 방송 밈으로 알맞지 않은 것은?', options:['무음이별이 들리면 (화남) 이모지를 사용','장문글',"아무때나 '감사합니다' '사랑합니다'를 쓰기",'질투','고백'], correct:[2]},
-  { text:'온리리온은', options:['처녀다','비처녀다'], correct:[0]},
+  { text:'온리리온은', options:['처녀다','비처녀다','그것은 남표니만이 안다'], correct:[2], note:'어흐.' },
   { text:'온리리온은', options:['남자다','여자다'], correct:[0,1], gimmick:'runaway'}
 ];
 const SOPHIE_IMAGE = 'https://www.koeitecmoamerica.com/sophie2/img/products/img_bonus05%40sp.png';
@@ -57,7 +57,7 @@ function makeButton(label,cls,fn){const b=el('button','btn '+cls,label);b.type='
 function reset(){state={phase:'start',index:0,score:0,locked:false,selected:new Set(),results:[],startTime:null,endTime:null,evades:0};clearInterval(intervalId);renderStart()}
 function begin(){QUESTIONS.find(q=>q.gimmick==='email').options=randomEmailOptions();state.phase='play';state.startTime=Date.now();clearInterval(intervalId);intervalId=setInterval(()=>{const t=document.getElementById('elapsed');if(t)t.textContent=formattedTime()},1000);renderQuestion()}
 function startShell(){const paper=el('section','paper fade');paper.appendChild(el('div','top-strip'));app.replaceChildren(paper);return paper}
-function renderStart(){const paper=startShell();const cover=el('div','cover');cover.innerHTML=`<span class="pill">✦ 공식 아님 · 진심임</span><h1>온리리온<br><span>능력 평가 시험</span></h1><p class="lead">아는 만큼 맞히세요.<br>정답을 골라 온리리온 지식을 증명하세요.</p><div class="facts"><div class="fact">총 17문항</div><div class="fact">객관식 평가</div><div class="fact">시간 제한 없음</div></div><div class="exam-notice"><strong>응시 안내</strong><br>일부 문항은 정답이 여러 개일 수 있습니다. 특별히 ‘2개 선택’이라고 표시된 문항만 두 보기를 고른 뒤 제출하세요. 정답은 각 문항 제출 후 공개됩니다.</div>`;
+function renderStart(){const paper=startShell();const cover=el('div','cover');cover.innerHTML=`<span class="pill">✦ 공식 아님 · 진심임</span><h1>온리리온<br><span>능력 평가 시험</span></h1><p class="lead">아는 만큼 맞히세요.<br>정답을 골라 온리리온 지식을 증명하세요.</p><div class="facts"><div class="fact">총 17문항</div><div class="fact">객관식 평가</div><div class="fact">시간 제한 없음</div></div><div class="exam-notice"><strong>응시 안내</strong><br>일부 문항은 정답이 여러 개일 수 있습니다. 특별히 ‘2개 선택’이라고 표시된 문항만 두 보기를 고른 뒤 제출하세요. 답안을 제출하면 결과를 확인하고 다음 문제로 이동할 수 있습니다.</div>`;
   const row=el('div','start-row');const acts=el('div','start-actions');acts.append(makeButton('시험 시작하기  →','btn-primary',begin));if(location.protocol==='https:'||location.protocol==='http:')acts.append(makeButton('시험 링크 복사','btn-subtle',shareLink));row.append(el('div','tiny','수험번호는 없습니다. 여러분이 알아서 잘 보세요.'),acts);cover.append(row);paper.append(cover)}
 function renderQuestion(){state.locked=false;state.selected=new Set();state.evades=0;const q=QUESTIONS[state.index],paper=startShell();const quiz=el('div','quiz');
   const bar=el('div','exam-bar');bar.innerHTML=`<span>OLAT · <strong>KNOW YOUR ONLYLION</strong></span><span class="stepcount">${pad(state.index+1)} / ${QUESTIONS.length} &nbsp; · &nbsp; <span id="elapsed">${formattedTime()}</span></span>`;quiz.append(bar);
@@ -102,14 +102,23 @@ function renderRunaway(area,q){const stage=el('div','runway');const male=el('but
 function finishAnswer(selected){if(state.locked)return;const q=QUESTIONS[state.index];state.locked=true;
   const correct=q.multi?(selected.length===q.correct.length&&selected.every(i=>q.correct.includes(i))):(selected.length===1&&q.correct.includes(selected[0]));
   if(correct)state.score++;state.results.push({text:q.text,selected:[...selected],correct,correctOptions:[...q.correct]});
+  const isLastQuestion=state.index===QUESTIONS.length-1;
+  const secretEnding=isLastQuestion&&correct;
   const area=document.getElementById('answerarea');area.querySelectorAll('button.option').forEach(btn=>{
     btn.disabled=true;const i=btn.dataset.index!=null?Number(btn.dataset.index):(q.gimmick==='runaway'&&btn.classList.contains('male')?0:-1);
-    if(q.correct.includes(i))btn.classList.add('good');if(selected.includes(i)&&!q.correct.includes(i))btn.classList.add('bad');
+    // 마지막 문제는 정답 색상이나 문구를 통해 답을 노출하지 않습니다.
+    if(!isLastQuestion){
+      if(q.correct.includes(i))btn.classList.add('good');
+      if(selected.includes(i)&&!q.correct.includes(i))btn.classList.add('bad');
+    }
     if(selected.includes(i))btn.classList.add('chosen');
   });
   const submit=document.getElementById('submitMulti');if(submit)submit.disabled=true;
-  const feedback=el('section','feedback '+(correct?'':'incorrect'));feedback.setAttribute('role','status');feedback.append(el('h3',null,correct?'✓ 정답입니다!':'✕ 오답입니다.'));
-  const expected=el('p');expected.append(el('b',null,'정답: '),document.createTextNode(q.correct.map(i=>q.options[i]).join(' · ')));feedback.append(expected);
+  const feedback=el('section','feedback '+(!correct?'incorrect':''));feedback.setAttribute('role','status');
+  feedback.append(el('h3',null,secretEnding?'인정하셨군요?':correct?'✓ 정답입니다!':'✕ 오답입니다.'));
+  if(!isLastQuestion){
+    const expected=el('p');expected.append(el('b',null,'정답: '),document.createTextNode(q.correct.map(i=>q.options[i]).join(' · ')));feedback.append(expected);
+  }
   if(q.note)feedback.append(el('p',null,q.note));
   if(q.image){const pic=el('div','image-card');const img=document.createElement('img');img.src=SOPHIE_IMAGE;img.alt='소피 노이엔뮐러 캐릭터 일러스트';img.loading='lazy';img.onerror=()=>{img.style.display='none';const fallback=el('p',null,'이미지 로딩에 실패했습니다. 아래 링크에서 확인할 수 있습니다.');pic.prepend(fallback)};
     const details=el('div','image-copy');details.append(el('b',null,'소피 노이엔뮐러 (Sophie Neuenmuller)'),el('p',null,'《소피의 아틀리에》 등장인물 · 이미지: KOEI TECMO 공식 자료'));
@@ -122,7 +131,7 @@ function grade(){const s=state.score;if(s===QUESTIONS.length)return ['온리리�
 function renderEnd(){const paper=startShell(),end=el('div','end'),g=grade(),percent=Math.round(state.score/QUESTIONS.length*100);
   const top=el('div','result-top');top.innerHTML=`<div class="result-title">OLAT · 성적 통지서</div><div class="result-score">${percent}<small> / 100</small></div><div class="result-grade"></div><div class="result-sub"></div>`;top.querySelector('.result-grade').textContent=g[0];top.querySelector('.result-sub').textContent=g[1];end.append(top);
   const stats=el('div','statgrid');[['정답 문항',`${state.score} / ${QUESTIONS.length}`],['총 소요 시간',formattedTime()],['전체 문항',`${QUESTIONS.length}개`]].forEach(([name,value])=>{const box=el('div','stat');box.append(el('div','stat-label',name),el('div','stat-val',value));stats.append(box)});end.append(stats);
-  const review=el('div','review');review.append(el('h3',null,'문항별 결과'));state.results.forEach((r,i)=>{const row=el('div','reviewrow');row.append(el('span','idx',pad(i+1)),el('span','prompt',r.text),el('span','tag '+(r.correct?'':'fail'),r.correct?'정답':'오답'));review.append(row)});end.append(review);
+  const review=el('div','review');review.append(el('h3',null,'문항별 결과'));state.results.forEach((r,i)=>{const row=el('div','reviewrow');row.append(el('span','idx',pad(i+1)),el('span','prompt',r.text),el('span','tag '+(r.correct?'':'fail'),i===QUESTIONS.length-1&&r.correct?'인정하셨군요?':r.correct?'정답':'오답'));review.append(row)});end.append(review);
   const buttons=el('div','end-buttons');buttons.append(makeButton('다시 응시하기','btn-primary',()=>{reset();begin();window.scrollTo({top:0,behavior:'smooth'})}),makeButton('결과 복사하기','btn-subtle',async()=>{const msg=`온리리온 능력 평가 시험 결과: ${percent}점 (${state.score}/${QUESTIONS.length}문항 정답) · ${g[0]} · 소요 시간 ${formattedTime()}`;try{await navigator.clipboard.writeText(msg);toast('결과를 복사했습니다.')}catch(e){const t=document.createElement('textarea');t.value=msg;document.body.append(t);t.select();try{document.execCommand('copy');toast('결과를 복사했습니다.')}catch(err){toast('복사할 수 없습니다.')}t.remove()}}));end.append(buttons);paper.append(end)}
 async function shareLink(){const link=location.href.split('#')[0].split('?')[0];try{await navigator.clipboard.writeText(link);toast('시험 링크를 복사했습니다.')}catch(e){const t=document.createElement('textarea');t.value=link;document.body.append(t);t.select();if(document.execCommand('copy'))toast('시험 링크를 복사했습니다.');else toast('주소창의 링크를 복사해 주세요.');t.remove()}}
 function toast(message){let t=document.getElementById('olat-toast');if(!t){t=el('div');t.id='olat-toast';t.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:12px 18px;border-radius:9px;background:#26303b;color:white;box-shadow:0 5px 20px #0002;z-index:20;font-size:13px;font-weight:700;text-align:center;max-width:90vw';document.body.append(t)}t.textContent=message;clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.remove(),2500)}
